@@ -1,0 +1,16 @@
+#searchBar{
+    height: 30px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+.searchContainer{
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f0f;
+    padding-left: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}

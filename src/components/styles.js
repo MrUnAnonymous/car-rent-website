@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         maxWidth: '300px',
-        padding: '10px',
         boxSizing: 'border-box',
         borderRadius: '20px',
         maxHeight: '400px',
@@ -47,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 0,
         margin: 0,
         paddingBottom: 0
     },
@@ -67,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'flex-start',
         flexWrap: 'wrap',
         gap: '10px',
-        padding: '10px'
     },
     contentItem: {
         width: '120px',

@@ -5,34 +5,16 @@ import { FavoriteBorderOutlined, LocalGasStationOutlined, PermIdentityOutlined, 
 import { CarData } from './data';
 import { Pagination } from '@mui/material';
 import SearchBar from './SearchBar';
+import './styles.css'
 const CarCard = () => {
     const classes = useStyles();
     const [page, setPage] = useState(1);
 
-    const [filteredCars, setFilteredCars] = useState([])
-    const [searchText, setSearchText] = useState()
-
-  useEffect(() => {
-    console.log("SEARCH TEXT", searchText);
-    filterCars(searchText);
-  }, [searchText]);
-
-  console.log("Car Data ====> " , CarData)
-  const filterCars = (searchText) => {
-    const filteredC = CarData?.filter((car) =>
-      car.carName?.toLowerCase().includes(searchText.toLowerCase())
-    );
-    return setFilteredCars(filteredC);
-  };
+    
 
   return (
     <div className={classes.container}>
-        <SearchBar
-            searchText={searchText}
-            setSearchText={setSearchText}
-            CarData={CarData}
-        />
-
+        
         <Container className={classes.cardGridItem} maxWidth="lg">
             <Grid container spacing={1} className={classes.mainGrid}>
                 {CarData?.slice((page - 1) * 6, page * 6).map((card) => ( 
