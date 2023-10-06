@@ -5,7 +5,8 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '100vh'
+        minHeight: '100vh',
+        flexDirection: 'column'
     },
     cardGrid:{
         //padding: '0px 0px',
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         margin: 0,
-        paddingBottom: 0
+        padding: 0
     },
     year: {
         fontSize: '12px',

@@ -10,14 +10,43 @@ const CarCard = () => {
     const classes = useStyles();
     const [page, setPage] = useState(1);
 
-    
+    const [filteredCars, setFilteredCars] = useState([])
+    const [searchText, setSearchText] = useState("")
+
+  useEffect(() => {
+    console.log("SEARCH TEXT", searchText);
+    if(searchText !== ""){     
+      filterCars(searchText);
+    } else {
+        setFilteredCars(CarData);
+    }
+  }, [searchText]);
+
+  useEffect(() => {
+    console.log("RESULT" , filteredCars)
+  }, [filteredCars])
+
+  console.log("Car Data ====> " , CarData)
+  const filterCars = (searchText) => {
+      const filteredCars = CarData.filter((car) =>
+        car.carName?.toLowerCase().includes(searchText.toLowerCase())
+        );
+    return setFilteredCars(filteredCars);
+  };
+
 
   return (
     <div className={classes.container}>
-        
+        <div className="searchContainer">
+          <SearchBar
+              searchText={searchText}
+              setSearchText={setSearchText}
+              CarData={CarData}
+          />
+          </div>
         <Container className={classes.cardGridItem} maxWidth="lg">
             <Grid container spacing={1} className={classes.mainGrid}>
-                {CarData?.slice((page - 1) * 6, page * 6).map((card) => ( 
+                {filteredCars?.slice((page - 1) * 6, page * 6).map((card) => ( 
                 <Grid item lg={4} className={classes.cardGrid}>
                     <Card className={classes.card}>
 
